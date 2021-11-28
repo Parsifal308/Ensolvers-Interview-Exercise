@@ -13,21 +13,21 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.GMarinero.EnsolversTest.entities.Person;
-import com.GMarinero.EnsolversTest.services.PersonService;
+import com.GMarinero.EnsolversTest.entities.Folder;
+import com.GMarinero.EnsolversTest.services.FolderService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(path = "ensolvers/API/persons")
-public class PersonaController {
+@RequestMapping(path = "ensolvers/API/folders")
+public class FolderController {
 
 	@Autowired
-	private PersonService personService;
+	private FolderService folderService;
 	
 	@GetMapping("")
 	ResponseEntity<?> getAll(){
 		try {
-			return ResponseEntity.status(HttpStatus.OK).body(personService.findAllPersons());
+			return ResponseEntity.status(HttpStatus.OK).body(folderService.findAllFolders());
 		}catch(Exception ex) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("-->[Error] " + ex.getMessage());
 		}
@@ -36,25 +36,25 @@ public class PersonaController {
 	@GetMapping("{id}")
 	ResponseEntity<?> getById(@PathVariable Long id){
 		try {
-			return ResponseEntity.status(HttpStatus.OK).body(personService.findPersonById(id));
+			return ResponseEntity.status(HttpStatus.OK).body(folderService.findFolderById(id));
 		}catch(Exception ex) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body("-->[Error] " + ex.getMessage());
 		}
 	}
 	
 	@PostMapping("")
-	ResponseEntity<?> savePerson(@RequestBody Person person) {
+	ResponseEntity<?> savePerson(@RequestBody Folder folder) {
 		try {
-			return ResponseEntity.status(HttpStatus.OK).body(personService.createPerson(person));
+			return ResponseEntity.status(HttpStatus.OK).body(folderService.createFolder(folder));
 		}catch(Exception ex) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("-->[Error] " + ex.getMessage());
 		}
 	}
 	
 	@PutMapping("{id}")
-	ResponseEntity<?> updatePersona(@RequestBody Person person, @PathVariable Long id) {
+	ResponseEntity<?> updatePersona(@RequestBody Folder folder, @PathVariable Long id) {
 		try {
-			return ResponseEntity.status(HttpStatus.OK).body(personService.updatePerson(id, person));
+			return ResponseEntity.status(HttpStatus.OK).body(folderService.updateFolder(id, folder));
 		}catch(Exception ex) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("-->[Error] " + ex.getMessage());
 		}
@@ -63,7 +63,7 @@ public class PersonaController {
 	@DeleteMapping("{id}")
 	ResponseEntity<?> deletePerson(@PathVariable Long id) {
 		try {
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(personService.deletePerson(id));
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(folderService.deleteFolder(id));
 		}catch(Exception ex) {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("-->[Error] " + ex.getMessage());
 		}

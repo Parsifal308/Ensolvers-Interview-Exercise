@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -33,6 +34,40 @@ public class Person implements Serializable{
 	@Column(name="lastName")
 	private String lastName;
 	
-	@OneToMany(mappedBy="person")
+	@OneToMany(mappedBy="person",cascade=CascadeType.PERSIST)
 	List<Activity> activity= new ArrayList<Activity>();
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public List<Activity> getActivity() {
+		return activity;
+	}
+
+	public void setActivity(List<Activity> activity) {
+		this.activity = activity;
+	}
+	
+	
 }

@@ -48,12 +48,84 @@ public class Activity implements Serializable{
 	@Column(name="dateFinished")
 	private String dateFinished;
 
-	@ManyToOne(cascade = CascadeType.REFRESH)
+	@ManyToOne
 	@JoinColumn(name="fk_person")
 	Person person;
 	
-	@ManyToOne(cascade = CascadeType.REFRESH)
+	@ManyToOne
 	@JoinColumn(name = "fk_folder")
 	Folder folder;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDetail() {
+		return detail;
+	}
+
+	public void setDetail(String detail) {
+		this.detail = detail;
+	}
+
+	public boolean isDone() {
+		return isDone;
+	}
+
+	public void setDone(boolean isDone) {
+		this.isDone = isDone;
+	}
+
+	public String getDateCreated() {
+		return dateCreated;
+	}
+
+	public void setDateCreated(String dateCreated) {
+		this.dateCreated = dateCreated;
+	}
+
+	public String getDateStarted() {
+		return dateStarted;
+	}
+
+	public void setDateStarted(String dateStarted) {
+		this.dateStarted = dateStarted;
+	}
+
+	public String getDateFinished() {
+		return dateFinished;
+	}
+
+	public void setDateFinished(String dateFinished) {
+		this.dateFinished = dateFinished;
+	}
+
+	public Person getPerson() {
+		return person;
+	}
+
+	public void setPerson(Person person) {
+		this.person = person;
+	}
+
+	public Folder getFolder() {
+		return folder;
+	}
+
+	public void setFolder(Folder folder) {
+		this.folder = folder;
+	}
 	
 }
