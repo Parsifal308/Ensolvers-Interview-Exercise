@@ -19,8 +19,8 @@
 ## Ports:
 ### mysql server port: 3306
 ### TomCat Server Port: 9000
-
-
+#
+#
 ## End points:
 ### Activities:
 #### GET(all): ensolvers/API/activities/
