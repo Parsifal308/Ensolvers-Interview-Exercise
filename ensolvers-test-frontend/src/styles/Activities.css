@@ -1,0 +1,32 @@
+
+#infoPanel{
+  background-color: #73A772;
+  position: sticky;
+  top:15%;
+  padding-top: 15;
+}
+.table_columns{
+  position: sticky;
+  font-size: 25;
+  background-color: #96D195;
+  padding: 10;
+}
+.table_rows{
+  font-size: 20;
+  background-color: #96D195;
+  position: sticky;
+  padding: 10;
+}
+
+#seachBar{
+  position: sticky;
+  margin: 100;;
+  background-color: #C3C3C3;
+  padding: 5;
+  margin:5%;
+  font-size: 25;
+}
+#searchInput{
+  padding-inline-start: 5%;
+  padding-inline-end: 5%;
+}

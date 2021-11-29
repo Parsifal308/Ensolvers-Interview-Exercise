@@ -24,7 +24,7 @@ public class FolderController {
 	@Autowired
 	private FolderService folderService;
 	
-	@GetMapping("")
+	@GetMapping("/")
 	ResponseEntity<?> getAll(){
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(folderService.findAllFolders());
@@ -33,7 +33,7 @@ public class FolderController {
 		}
 	}
 	
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	ResponseEntity<?> getById(@PathVariable Long id){
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(folderService.findFolderById(id));
@@ -42,7 +42,7 @@ public class FolderController {
 		}
 	}
 	
-	@PostMapping("")
+	@PostMapping("/")
 	ResponseEntity<?> savePerson(@RequestBody Folder folder) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(folderService.createFolder(folder));
@@ -51,7 +51,7 @@ public class FolderController {
 		}
 	}
 	
-	@PutMapping("{id}")
+	@PutMapping("/{id}")
 	ResponseEntity<?> updatePersona(@RequestBody Folder folder, @PathVariable Long id) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(folderService.updateFolder(id, folder));
@@ -60,7 +60,7 @@ public class FolderController {
 		}
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	ResponseEntity<?> deletePerson(@PathVariable Long id) {
 		try {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(folderService.deleteFolder(id));

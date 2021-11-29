@@ -24,7 +24,7 @@ public class ActivityController {
 	@Autowired
 	private ActivityService activityService;
 	
-	@GetMapping("")
+	@GetMapping("/")
 	ResponseEntity<?> getAll(){
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(activityService.findAllActivities());
@@ -33,7 +33,7 @@ public class ActivityController {
 		}
 	}
 	
-	@GetMapping("{id}")
+	@GetMapping("/{id}")
 	ResponseEntity<?> getById(@PathVariable Long id){
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(activityService.findActivityById(id));
@@ -42,7 +42,7 @@ public class ActivityController {
 		}
 	}
 	
-	@PostMapping("")
+	@PostMapping("/")
 	ResponseEntity<?> savePerson(@RequestBody Activity activity) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(activityService.createActivity(activity));
@@ -51,7 +51,7 @@ public class ActivityController {
 		}
 	}
 	
-	@PutMapping("{id}")
+	@PutMapping("/{id}")
 	ResponseEntity<?> updatePersona(@RequestBody Activity activity, @PathVariable Long id) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(activityService.updateActivity(id, activity));
@@ -60,7 +60,7 @@ public class ActivityController {
 		}
 	}
 	
-	@DeleteMapping("{id}")
+	@DeleteMapping("/{id}")
 	ResponseEntity<?> deletePerson(@PathVariable Long id) {
 		try {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(activityService.deleteActivity(id));
