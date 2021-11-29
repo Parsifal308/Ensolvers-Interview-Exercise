@@ -1,24 +1,29 @@
 # Ensolvers Interview Exercise
 ## Implementation of the Ensolver job application exercise
-
 ### This resolution consist in a "To-Do" single page application. In it, you can create activities and assign them to persons and folder to which they belong. 
 ### Once an activity or task is completed, you can check it as "done". If you want to remove an activity, you can do it by pressing the "delete" hyperlink. This will pop up a confirmation panel.
-
+#
+#
+#
 ## Frameworks:
 ### * Spring Boot(v2.6)
 ### * React (v17.0.2)
-
- ## Tools :
+#
+#
+#
+## Tools :
 ### * Node.js(v16.13.0)
 ### * MySQL
 ### * Apache Web Server(v2.4)
 ### * Eclipse IDE(2021-09)
 ### * Visual Studio Code (v1.56.2)
-
-
+#
+#
+#
 ## Ports:
 ### mysql server port: 3306
 ### TomCat Server Port: 9000
+#
 #
 #
 ## End points:
@@ -43,8 +48,8 @@
 #### PUT: ensolvers/API/folders/{id}
 #### DELETE: ensolvers/API/folders/{id}
 
-
-
+#
+#
 ##
 # Developed by Guillermo Marinero
 ##
