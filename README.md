@@ -5,10 +5,23 @@
 ### Once an activity or task is completed, you can check it as "done". If you want to remove an activity, you can do it by pressing the "delete" hyperlink. This will pop up a confirmation panel.
 
 ## Frameworks:
-### * Spring Boot(java 11)
+### * Spring Boot(v2.6)
 ### * React (v17.0.2)
 
-## API Request:
+ ## Tools :
+### * Node.js(v16.13.0)
+### * MySQL
+### * Apache Web Server(v2.4)
+### * Eclipse IDE(2021-09)
+### * Visual Studio Code (v1.56.2)
+
+
+## Ports:
+### mysql server port: 3306
+### TomCat Server Port: 9000
+
+
+## End points:
 ### Activities:
 #### GET(all): ensolvers/API/activities/
 #### GET(by id): ensolvers/API/activities/{id}
@@ -30,11 +43,7 @@
 #### PUT: ensolvers/API/folders/{id}
 #### DELETE: ensolvers/API/folders/{id}
 
-## Tools :
-### * Node.js(v16.13.0)
-### * MySQL
-### * Apache Web Server(v2.4)
-### * Eclipse IDE(2021-09)
+
 
 ##
 # Developed by Guillermo Marinero
