@@ -1,19 +1,28 @@
-import React, { Component } from "react";
+import React, {useEffect, useState}  from "react";
 import "../styles/persons.css";
+import axios from "axios";
 
-class Persons extends Component {
-	constructor(props){
-		super(props)
-		this.state = {
-			id: 0,
-			name: "",
-			lastname: "",
-		}
-	
-	}		
+function Persons(props) {
+	const url = "http://localhost:9000/ensolvers/API/persons/";
 
-  	render() {
-    	return (
+	const [post, setPost] = React.useState(null);
+		React.useEffect(() => {
+			axios.get(url).then((response) => {
+			setPost(response.data);
+			});
+		}, []);
+
+  		if (post == null) return null;
+		  const listPersons = post.map((person) =>{
+			return(
+			<tr className="table_rows">
+				<td> {person.id} </td>
+				<td> {person.name} </td>
+				<td> {person.lastName} </td>
+				<button > Delete </button>
+			</tr>)});
+		
+		return(
 			<div id="infoPanel" class="header">
 				<span id="seachBar">
 					<input id="searchInput"></input>
@@ -26,22 +35,15 @@ class Persons extends Component {
 						<table id="personsTable">
 							<tr className="table_columns">
 								<th id="table_id">ID</th>
-								<th id="table_name">Name</th>
-								<th id="table_lastname">Lastname</th>
+								<th id="table_name">NOMBRE</th>
+								<th id="table_lastname"> APELLIDO </th>
 							</tr>
-							<tr className="table_rows">
-								<td>01</td>
-								<td>Guillermo</td>
-								<td>Marinero</td>
-								<td><input type="checkbox"></input><a>Done</a></td>
-								<td><a href="remove">Delete</a></td>
-							</tr>
+							{listPersons}
 						</table>
 						</span>
 					</ol>
 				</span>
     		</div>
 		);
-  	}
 }
 export default Persons;

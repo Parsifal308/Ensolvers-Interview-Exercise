@@ -1,17 +1,27 @@
-import React, { Component } from "react";
+import React, {useEffect, useState} from "react";
 import "../styles/folders.css";
+import axios from "axios";
+function Folders(props) {
 
-class Folders extends Component {
-	constructor(props){
-		super(props)
-		this.state={
-			id:0,
-			name:"",
-			description:""
-		}
-	}
+	const getURL = "http://localhost:9000/ensolvers/API/folders/";
+	const [post, setPost] = React.useState(null);
+		React.useEffect(() => {
+			axios.get(getURL).then((response) => {
+			setPost(response.data);
+			});
+		}, []);
 
-  	render() {
+  		if (post == null) return null;
+		  const listFolders = post.map((folder) =>{
+			return(
+			<tr className="table_rows">
+				<td> {folder.id} </td>
+				<td> {folder.name} </td>
+				<td> <p> {folder.description} </p> </td>
+				<td><a href="remove">Delete</a></td>
+			</tr>)});
+		
+
     	return (
 			<div id="infoPanel" class="header">
 			<span id="seachBar">
@@ -28,19 +38,12 @@ class Folders extends Component {
 							<th id="table_name">Name</th>
 							<th id="table_lastname">Description</th>
 						</tr>
-						<tr className="table_rows">
-							<td>01</td>
-							<td> Programming Tasks </td>
-							<td> <p> All the programming tasks scheduled for this week </p> </td>
-								<td><input type="checkbox"></input><a>Done</a></td>
-								<td><a href="remove">Delete</a></td>
-						</tr>
+						{listFolders}
 					</table>
 					</span>
 				</ol>
 			</span>
     	</div>
 	);
-  }
 }
 export default Folders;

@@ -1,15 +1,14 @@
 import React, { Component } from "react";
 import "../styles/home.css";
 
-class Home extends Component {
-	
-
-  render() {
+function Home(props) {
     return (
 		<div id="home">
-
+			<h1>Ensolvers Interview Exercise</h1>
+			<h2>Implementation of the Ensolver job application exercise</h2>
+			<b></b>
+			<h2>Developed by Guillermo Marinero</h2>
     	</div>
 	);
-  }
 }
 export default Home;

@@ -1,9 +1,9 @@
 
 #infoPanel{
-  background-color: #73A772;
+  background-color: #a78172;
   position: sticky;
-  top:15%;
-  padding-top: 15;
+  top:25%;
+  padding-top: 25;
 }
 .table_columns{
   position: sticky;
@@ -21,7 +21,7 @@
 #seachBar{
   position: sticky;
   margin: 100;;
-  background-color: #C3C3C3;
+  background-color: #6d63f6;
   padding: 5;
   margin:5%;
   font-size: 25;

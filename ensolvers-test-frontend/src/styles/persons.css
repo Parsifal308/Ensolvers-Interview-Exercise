@@ -1,8 +1,7 @@
 #infoPanel{
-  background-color: #73A772;
-  position: sticky;
-  top:15%;
-  padding-top: 15;
+  background-color: #d63e3e;
+  position: relative;
+  padding-top: 25;
 }
 .table_columns{
   position: sticky;
@@ -18,14 +17,14 @@
 }
 
 #seachBar{
-  position: sticky;
+  position: relative;
   margin: 100;;
   background-color: #C3C3C3;
-  padding: 5;
-  margin:5%;
-  font-size: 25;
+  padding: 15;
+  margin:15;
+  font-size: 35;
 }
 #searchInput{
-  padding-inline-start: 5%;
-  padding-inline-end: 5%;
+  padding-inline-start: 15;
+  padding-inline-end: 15;
 }

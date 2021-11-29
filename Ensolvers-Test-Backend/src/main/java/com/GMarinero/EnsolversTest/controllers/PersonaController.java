@@ -24,7 +24,7 @@ public class PersonaController {
 	@Autowired
 	private PersonService personService;
 	
-	@GetMapping("/")
+	@GetMapping("")
 	ResponseEntity<?> getAll(){
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(personService.findAllPersons());
@@ -33,7 +33,7 @@ public class PersonaController {
 		}
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("{id}")
 	ResponseEntity<?> getById(@PathVariable Long id){
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(personService.findPersonById(id));
@@ -42,7 +42,7 @@ public class PersonaController {
 		}
 	}
 	
-	@PostMapping("/")
+	@PostMapping("")
 	ResponseEntity<?> savePerson(@RequestBody Person person) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(personService.createPerson(person));
@@ -51,7 +51,7 @@ public class PersonaController {
 		}
 	}
 	
-	@PutMapping("/{id}")
+	@PutMapping("{id}")
 	ResponseEntity<?> updatePersona(@RequestBody Person person, @PathVariable Long id) {
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(personService.updatePerson(id, person));
@@ -60,7 +60,7 @@ public class PersonaController {
 		}
 	}
 	
-	@DeleteMapping("/{id}")
+	@DeleteMapping("{id}")
 	ResponseEntity<?> deletePerson(@PathVariable Long id) {
 		try {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(personService.deletePerson(id));

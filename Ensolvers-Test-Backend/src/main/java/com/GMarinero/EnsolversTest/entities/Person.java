@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
@@ -33,10 +34,10 @@ public class Person implements Serializable{
 	@NotEmpty
 	@Column(name="lastName")
 	private String lastName;
-	
+
 	@OneToMany(mappedBy="person",cascade=CascadeType.PERSIST)
 	List<Activity> activity= new ArrayList<Activity>();
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -61,13 +62,6 @@ public class Person implements Serializable{
 		this.lastName = lastName;
 	}
 
-	public List<Activity> getActivity() {
-		return activity;
-	}
-
-	public void setActivity(List<Activity> activity) {
-		this.activity = activity;
-	}
 	
 	
 }

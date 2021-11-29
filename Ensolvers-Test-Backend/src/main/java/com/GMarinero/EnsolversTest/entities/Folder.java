@@ -61,12 +61,4 @@ public class Folder implements Serializable{
 		this.description = description;
 	}
 
-	public List<Activity> getActivities() {
-		return activities;
-	}
-
-	public void setActivities(List<Activity> activities) {
-		this.activities = activities;
-	}
-
 }

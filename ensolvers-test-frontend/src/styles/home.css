@@ -1,0 +1,13 @@
+
+#home{
+    background-color: blue;
+    padding: 25;
+    margin: 150;
+    position: absolute;
+}
+h1{
+    font-size: 50;
+}
+h2{
+    font-size: 30;
+}
